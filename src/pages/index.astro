@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout>
+  <Navbar />
+  <main>
+    <Hero />
+    <About />
+    <Skills />
+    <Experience />
+    <Education />
+    <Contact />
+  </main>
+</Layout>
+
+<style is:global>
+  html {
+    background-color: #0a0a0f;
+  }
+
+  /* Scroll reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #6366f1;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a855f7;
+  }
+
+  /* Selection color */
+  ::selection {
+    background: rgba(99, 102, 241, 0.3);
+    color: #fff;
+  }
+</style>
+
+<script>
+  // Intersection Observer for scroll reveal
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Typing effect for hero title
+  const titles = [
+    'Fullstack Javascript Developer',
+    'React & Next.js Expert',
+    'Node.js & GraphQL Dev',
+  ];
+  let titleIdx = 0;
+  let charIdx = 0;
+  let deleting = false;
+  const typedEl = document.getElementById('typed-title');
+
+  function type() {
+    if (!typedEl) return;
+    const current = titles[titleIdx];
+    if (deleting) {
+      charIdx--;
+      typedEl.textContent = current.substring(0, charIdx);
+      if (charIdx === 0) {
+        deleting = false;
+        titleIdx = (titleIdx + 1) % titles.length;
+        setTimeout(type, 500);
+        return;
+      }
+      setTimeout(type, 40);
+    } else {
+      charIdx++;
+      typedEl.textContent = current.substring(0, charIdx);
+      if (charIdx === current.length) {
+        deleting = true;
+        setTimeout(type, 2500);
+        return;
+      }
+      setTimeout(type, 80);
+    }
+  }
+
+  setTimeout(type, 1500);
+</script>
