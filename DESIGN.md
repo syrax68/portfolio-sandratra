@@ -17,6 +17,14 @@ Une direction visuelle maritime inspirée de One Piece : océan profond, ivoire,
 
 La profondeur repose sur un décor réaliste généré, une parallaxe au pointeur, une boussole composée de calques CSS 3D et un portrait inclinable. Le bouton Mouvement mémorise le choix localement ; la préférence système de réduction des animations est respectée. Le contenu reste accessible lorsque les scripts sont désactivés. Les visuels de projets sont des compositions typographiques originales servant de couvertures de missions.
 
+Le curseur natif utilise une ancre SVG originale (`public/icons/anchor-cursor.svg`) sur les appareils dotés d’un pointeur précis. `src/styles/pointer.css` et `src/scripts/water-effects.ts` ajoutent une brève ondulation et des gouttelettes à chaque clic ou toucher. Ce calque décoratif ne capture aucune interaction ; les activations au clavier et le mode de réduction des animations ne déclenchent pas l’effet. Les éléments sont supprimés après une seconde et limités à six impacts simultanés.
+
+## Icônes des compagnons
+
+Les icônes Codex, Claude, Cursor et OpenAI (pour GPT) proviennent de [Lobe Icons](https://github.com/lobehub/lobe-icons/tree/master/packages/static-svg/icons), sous licence MIT. Les SVG sont conservés dans `public/icons/`, avec leur licence dans `public/icons/LICENSE.txt`. Ils sont affichés comme masques CSS pour reprendre la couleur du bandeau. Les libellés restent visibles et les icônes sont décoratives pour les lecteurs d’écran.
+
+Les icônes Next.js et Node.js proviennent de [Simple Icons](https://github.com/simple-icons/simple-icons), sous licence CC0. Elles utilisent le même affichage en masque CSS ; la licence est conservée dans `public/icons/SIMPLE-ICONS-LICENSE.md`.
+
 ## Décor généré
 
 Outil : **imagegen intégré**, sans CLI. Image conservée dans le projet : [public/images/grand-line.webp](public/images/grand-line.webp), 1672 × 941, environ 227 Ko. Le PNG original est conservé à son emplacement de génération. Conversion WebP avec Sharp pour limiter le poids à télécharger.

@@ -13,7 +13,7 @@ export const experiences = [
 export const skills = [
   { number: '01', name: 'Le sens du détail.', category: 'FRONTEND', icon: 'code', description: 'Des interfaces React et Next.js rapides, soignées et simples à utiliser, pensées pour transformer vos idées en produits concrets.', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
   { number: '02', name: 'Sous la surface.', category: 'BACKEND & DATA', icon: 'layers', description: 'Des API structurées et des données fiables pour bâtir des applications maintenables, prêtes à évoluer avec votre activité.', items: ['Node.js', 'Express', 'GraphQL', 'Apollo Server', 'MongoDB', 'MySQL', 'Symfony / PHP'] },
-  { number: '03', name: 'L’IA, en pratique.', category: 'IA & INNOVATION', icon: 'compass', description: 'Je me perfectionne sur Codex, Claude, Cursor et GPT pour mieux exploiter l’IA dans la conception, le développement et l’amélioration de mes projets.', items: ['Codex', 'Claude', 'Cursor', 'GPT'] },
+  { number: '03', name: 'L’IA, en pratique.', category: 'IA & INNOVATION', icon: 'compass', description: 'J’intègre Codex, Claude, Cursor et GPT à mon processus de développement. J’approfondis l’ingénierie agentique en construisant mon propre agent IA.', items: ['Codex', 'Claude', 'Cursor', 'GPT', 'Agentic engineering'] },
 ];
 
 export const supportingTools = ['Git / GitHub', 'Prestashop', 'OpenCart', 'CodeIgniter'];

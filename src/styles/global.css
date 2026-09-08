@@ -39,7 +39,7 @@ a {
 }
 button {
   font: inherit;
-  cursor: pointer;
+  cursor: var(--site-action-cursor, pointer);
 }
 button:disabled {
   cursor: default;
@@ -524,6 +524,7 @@ h2 em {
   font-size: 22px;
   color: #a2afa5;
   letter-spacing: -.5px;
+  white-space: nowrap;
 }
 .react-word>span {
   font-size: 34px;
@@ -532,7 +533,7 @@ h2 em {
   font-size: 25px;
   letter-spacing: -1px;
 }
-.next-word span {
+.next-word>.tech-suffix {
   font-size: 13px;
   align-self: flex-end;
   margin-left: -6px;
@@ -543,31 +544,30 @@ h2 em {
   font-size: 26px;
   letter-spacing: -1.5px;
 }
-.node-word>span {
+.node-word>.tech-suffix {
   font-size: 12px;
   margin-left: -4px;
 }
-.typescript-word {
-  font-size: 17px;
-  letter-spacing: -.5px;
+.ai-word {
+  font-size: 20px;
+  color: #c3bba5;
 }
-.typescript-word b {
-  font-size: 15px;
-  border: 1px solid #9cae9e;
-  padding: 3px 3px 0;
-  align-self: center;
+.ribbon-ai {
+  display: contents;
+}
+.companion-icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  background-color: currentColor;
+  -webkit-mask: var(--companion-icon) center / contain no-repeat;
+  mask: var(--companion-icon) center / contain no-repeat;
+}
+.claude-word {
+  font-family: var(--serif);
+  font-size: 27px;
   font-weight: 600;
-}
-.graphql-word {
-  font-size: 21px;
-}
-.graphql-word>span {
-  font-size: 36px;
-}
-.ribbon-end {
-  color: var(--gold);
-  font-size: 33px;
-  opacity: .7;
 }
 /* Layered CSS 3D Log Pose */
 .log-pose-link {
@@ -1100,7 +1100,7 @@ h2 em {
   grid-template-columns: 230px 1fr 140px 20px;
   align-items: center;
   gap: 20px;
-  cursor: pointer;
+  cursor: var(--site-action-cursor, pointer);
   list-style: none;
   transition: color .2s;
 }
@@ -1592,9 +1592,6 @@ h2 em {
   .journey-content {
     padding-left: 220px;
   }
-  .ribbon-end {
-    display: none;
-  }
   .ribbon-label {
     font-size: 7px;
   }
@@ -1604,8 +1601,15 @@ h2 em {
   .tech-word {
     font-size: 20px;
   }
-  .typescript-word {
-    font-size: 15px;
+  .ai-word {
+    font-size: 17px;
+  }
+  .companion-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .claude-word {
+    font-size: 24px;
   }
   .node-word {
     font-size: 25px;
@@ -1764,11 +1768,18 @@ h2 em {
   .node-word {
     font-size: 23px;
   }
-  .typescript-word {
-    font-size: 14px;
+  .ai-word {
+    font-size: 16px;
   }
-  .graphql-word {
-    font-size: 17px;
+  .ribbon-ai {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    width: 100%;
+  }
+  .claude-word {
+    font-size: 22px;
   }
   .about-grid {
     gap: 35px;
@@ -2072,17 +2083,20 @@ h2 em {
   .node-word {
     font-size: 20px;
   }
-  .typescript-word {
-    font-size: 13px;
-  }
-  .typescript-word b {
-    font-size: 12px;
-  }
-  .graphql-word {
+  .ai-word {
     font-size: 15px;
   }
-  .graphql-word>span {
-    font-size: 24px;
+  .ribbon-ai {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 18px 36px;
+  }
+  .companion-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .claude-word {
+    font-size: 21px;
   }
   .about-grid {
     grid-template-columns: minmax(0,1fr);

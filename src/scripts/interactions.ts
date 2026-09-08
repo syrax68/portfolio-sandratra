@@ -1,3 +1,5 @@
+import { setupWaterEffects } from './water-effects';
+
 const root = document.documentElement;
 const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
@@ -5,13 +7,17 @@ const motionToggle = document.querySelector<HTMLButtonElement>('#motion-toggle')
 const motionLabel = document.querySelector('#motion-label');
 let reduced = motionPreference.matches;
 try { const saved = localStorage.getItem('sandratra-reduced-motion'); if (saved !== null) reduced = saved === 'true' || motionPreference.matches; } catch {}
+const waterEffects = setupWaterEffects(() => reduced);
 function applyMotion() {
   root.classList.toggle('reduce-motion', reduced);
   if (motionToggle) motionToggle.disabled = motionPreference.matches;
   motionToggle?.setAttribute('aria-pressed', String(reduced));
   motionToggle?.setAttribute('aria-label', motionPreference.matches ? 'Animations réduites selon vos préférences système' : reduced ? 'Activer les animations' : 'Réduire les animations');
   if (motionLabel) motionLabel.textContent = reduced ? 'MOUVEMENT OFF' : 'MOUVEMENT ON';
-  if (reduced) resetScene();
+  if (reduced) {
+    resetScene();
+    waterEffects.clear();
+  }
 }
 motionToggle?.addEventListener('click', () => {
   reduced = !reduced;

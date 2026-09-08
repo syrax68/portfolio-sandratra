@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/pointer.css';
 interface Props { title?: string; }
 const { title = 'Sandratra — Ingénieur logiciel · Fullstack TypeScript & IA' } = Astro.props;
 ---
@@ -22,5 +23,5 @@ const { title = 'Sandratra — Ingénieur logiciel · Fullstack TypeScript & IA'
     <link rel="preload" as="image" href="/images/grand-line.webp" />
     <title>{title}</title>
   </head>
-  <body><a href="#main" class="skip-link">Aller au contenu</a><slot /></body>
+  <body><a href="#main" class="skip-link">Aller au contenu</a><slot /><div id="water-effects" class="water-effects" aria-hidden="true"></div></body>
 </html>
