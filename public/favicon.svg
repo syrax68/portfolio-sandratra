@@ -1,10 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Sandratra — Le chapeau de paille</title>
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#6366f1"/>
-      <stop offset="100%" style="stop-color:#a855f7"/>
+    <radialGradient id="ocean" cx=".3" cy=".15" r="1">
+      <stop stop-color="#24493f"/>
+      <stop offset="1" stop-color="#0b1919"/>
+    </radialGradient>
+    <linearGradient id="straw" x1="21" y1="16" x2="43" y2="37" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffe3a0"/>
+      <stop offset=".55" stop-color="#e5bb6b"/>
+      <stop offset="1" stop-color="#b98740"/>
+    </linearGradient>
+    <linearGradient id="brim" x1="12" y1="32" x2="49" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f7d68c"/>
+      <stop offset="1" stop-color="#c6984e"/>
     </linearGradient>
   </defs>
-  <rect width="100" height="100" rx="20" fill="url(#grad)"/>
-  <text x="50" y="68" font-family="monospace" font-size="42" font-weight="bold" fill="white" text-anchor="middle">SR</text>
+  <rect width="64" height="64" rx="17" fill="url(#ocean)"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="15.5" stroke="#d9b679" stroke-opacity=".24"/>
+  <g transform="rotate(-12 32 33)">
+    <ellipse cx="32" cy="42" rx="24" ry="8" fill="#061311" fill-opacity=".65"/>
+    <ellipse cx="32" cy="39" rx="24" ry="9" fill="#966832"/>
+    <ellipse cx="32" cy="37" rx="24" ry="9" fill="url(#brim)"/>
+    <ellipse cx="32" cy="37" rx="20" ry="6" stroke="#b17d38" stroke-opacity=".6"/>
+    <path d="M18 34.5 20.3 25c1.2-5.5 5.4-9 11.7-9s10.5 3.5 11.7 9l2.3 9.5c-6 5.2-22 5.2-28 0Z" fill="url(#straw)"/>
+    <path d="m20 28-1.6 6.5c6 5.1 21.2 5.1 27.2 0L44 28c-6.4 4.3-17.6 4.3-24 0Z" fill="#a33e32"/>
+    <path d="M21 29.5c6.6 3.7 15.4 3.7 22 0" stroke="#d96d4f" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M24 24c1.3-3.1 4.1-4.8 7.5-4.8" stroke="#ffeac0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M12.5 37.5c2.5 2.8 8 4.5 14 4.9" stroke="#ffe3a0" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <path d="m51 10 1.6 4.4L57 16l-4.4 1.6L51 22l-1.6-4.4L45 16l4.4-1.6Z" fill="#f2d38d"/>
 </svg>

@@ -1,62 +1,30 @@
 ---
+import Icon from './Icon.astro';
+import LogPose from './LogPose.astro';
 ---
-<section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden px-6">
-  <!-- Background gradient blobs -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="absolute -top-40 -left-40 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-    <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style="animation-delay: 3s;"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl"></div>
-    <!-- Grid pattern -->
-    <div class="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+<section id="hero" class="hero" aria-labelledby="hero-title">
+  <div class="hero-scene" aria-hidden="true"><img src="/images/grand-line.webp" alt="" width="1672" height="941" fetchpriority="high" /></div>
+  <div class="hero-shade" aria-hidden="true"></div><div class="hero-grain" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <div class="hero-eyebrow"><span class="short-line"></span> UN ESPRIT LIBRE. UN CODE PRÉCIS.</div>
+    <p class="hero-intro">Hello, moi c’est <strong>Sandratra</strong><span class="small-star">✧</span></p>
+    <h1 id="hero-title">Le code pour cap.<br />L’aventure pour<br /><em>horizon.</em></h1>
+    <p class="hero-description"><strong>Ingénieur logiciel · Fullstack TypeScript</strong><span class="hero-specialty">Développement assisté par IA.</span> Je transforme vos idées en produits utiles, performants<br class="desktop-break" /> et prêts à évoluer.</p>
+    <div class="hero-actions">
+      <a class="button button-gold" href="#experience">Explorer mes expéditions <Icon /></a>
+      <a class="text-link" href="#about">Rencontrer le capitaine <Icon name="diagonal" /></a>
+    </div>
+    <div class="hero-availability"><span class="status-dot"></span> Prêt à embarquer pour de nouveaux projets</div>
   </div>
-
-  <div class="max-w-4xl mx-auto text-center relative z-10">
-    <!-- Badge -->
-    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-mono mb-8 animate-fade-in">
-      <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-      Available for new projects
-    </div>
-
-    <!-- Name -->
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight animate-slide-up">
-      <span class="text-white">Rakotonarivo</span>
-      <br />
-      <span class="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-        Miandrisoa Sandratra
-      </span>
-    </h1>
-
-    <!-- Title -->
-    <div class="font-mono text-accent text-lg md:text-xl mb-6 animate-slide-up" style="animation-delay: 0.1s;">
-      <span id="typed-title">Frontend Expert & AI-Driven Developer</span>
-    </div>
-
-    <!-- Description -->
-    <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
-      Specialized in <span class="text-primary font-medium">React</span>, <span class="text-secondary font-medium">Next.js</span> & <span class="text-accent font-medium">Node.js</span>.
-      I build modern, high-performance web applications and leverage <span class="text-primary font-medium">AI tools</span> to ship faster and smarter.
-    </p>
-
-    <!-- CTAs -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style="animation-delay: 0.3s;">
-      <a
-        href="#experience"
-        class="px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-xl font-semibold text-white hover:shadow-lg hover:shadow-primary/25 hover:scale-105 transition-all duration-300"
-      >
-        View my work
-      </a>
-      <a
-        href="#contact"
-        class="px-8 py-4 border border-slate-600 rounded-xl font-semibold text-slate-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300"
-      >
-        Get in touch
-      </a>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="mt-20 flex flex-col items-center gap-2 text-slate-500 text-sm animate-fade-in" style="animation-delay: 0.8s;">
-      <span>Scroll</span>
-      <div class="w-0.5 h-12 bg-gradient-to-b from-slate-500 to-transparent animate-pulse"></div>
-    </div>
+  <div class="hero-coordinate"><span class="coordinate-cross">+</span><span>CAP SUR GRAND LINE<small>ANTANANARIVO, MADAGASCAR</small></span></div>
+  <div class="ship-caption"><span class="caption-rule"></span> L’AVENTURE N’ATTEND PAS.</div>
+  <LogPose />
+  <div class="container hero-bottom">
+    <a href="#about" class="scroll-link"><span class="scroll-capsule">↓</span> LE VOYAGE COMMENCE ICI</a>
+    <span class="hero-edition">PORTFOLIO VOL. 01 <span>—</span> EST. 2018</span>
+    <button id="motion-toggle" class="motion-toggle" aria-pressed="false" aria-label="Réduire les animations"><span class="motion-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="motion-label">MOUVEMENT ON</span></button>
   </div>
 </section>
+<div class="tech-ribbon" aria-label="Technologies principales">
+  <div class="container ribbon-inner"><span class="ribbon-label">MES COMPAGNONS<br />D’AVENTURE</span><span class="tech-word react-word"><span aria-hidden="true">⚛</span> React</span><span class="tech-word next-word">NEXT<span>.js</span></span><span class="tech-word node-word">node<span>.js</span></span><span class="tech-word typescript-word"><b>TS</b> TypeScript</span><span class="tech-word graphql-word"><span aria-hidden="true">◇</span> GraphQL</span><span class="ribbon-end" aria-hidden="true">✧</span></div>
+</div>
