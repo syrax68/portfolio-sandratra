@@ -2425,3 +2425,148 @@ html.reduce-motion .reveal.pending {
 html.reduce-motion .motion-bars i {
   height: 3px;
 }
+
+/* Readability pass: keep editorial microcopy legible across the site. */
+body {
+  font-size: 15px;
+}
+.eyebrow {
+  font-size: 11px;
+}
+.nav-links>a {
+  font-size: 12px;
+}
+.nav-number,
+.hero-coordinate small,
+.ship-caption,
+.project-year,
+.journey-heading>span:last-child,
+.journey-status,
+.skill-card .eyebrow,
+.skill-card .tags>span,
+.skills-tools .eyebrow {
+  font-size: 9px;
+}
+.nav-links>.nav-contact,
+.hero-eyebrow,
+.hero-availability,
+.scroll-link,
+.motion-toggle,
+.about-stats>div>span,
+.project-info p,
+.journey-date,
+.contact-availability,
+.copy-status {
+  font-size: 11px;
+}
+.hero-coordinate,
+.ribbon-label {
+  font-size: 9px;
+}
+.hero-description,
+.about-copy>p:not(.eyebrow),
+.contact-inner>p:not(.eyebrow):not(.copy-status) {
+  font-size: 14px;
+}
+.section-heading>p,
+.journey-content>p,
+.skill-description {
+  font-size: 13px;
+}
+.journey-company small,
+.journey-meta,
+.journey-toggle,
+.education-copy>p,
+.contact-email,
+.contact-links {
+  font-size: 12px;
+}
+
+@media(max-width:900px) {
+  .brand small {
+    font-size: 8px;
+  }
+  .hero-eyebrow,
+  .hero-coordinate,
+  .scroll-link,
+  .motion-toggle,
+  .ribbon-label,
+  .wanted-bounty small,
+  .portrait-stamp,
+  .project-art-top,
+  .journey-status,
+  .skill-card .eyebrow {
+    font-size: 9px;
+  }
+  .hero-description,
+  .about-copy>p:not(.eyebrow),
+  .section-heading>p,
+  .journey-content>p,
+  .skill-description,
+  .contact-inner>p:not(.eyebrow):not(.copy-status) {
+    font-size: 13px;
+  }
+  .hero-availability,
+  .about-stats>div>span,
+  .project-info p,
+  .journey-date,
+  .journey-heading>span:last-child,
+  .journey-meta,
+  .contact-availability,
+  .contact-links,
+  .footer-inner>span {
+    font-size: 10px;
+  }
+  .tags>span,
+  .skill-card .tags>span {
+    font-size: 9px;
+  }
+}
+
+@media(max-width:640px) {
+  .eyebrow,
+  .about-copy .eyebrow,
+  .contact-inner .eyebrow {
+    font-size: 9px;
+  }
+  .hero-eyebrow,
+  .hero-coordinate,
+  .scroll-link,
+  .motion-toggle,
+  .ribbon-label,
+  .project-art-top,
+  .journey-heading .eyebrow,
+  .journey-heading>span:last-child,
+  .journey-date,
+  .footer-inner>span {
+    font-size: 8px;
+  }
+  .hero-description,
+  .section-heading>p,
+  .journey-content>p,
+  .skill-description,
+  .contact-inner>p:not(.eyebrow):not(.copy-status) {
+    font-size: 13px;
+  }
+  .about-copy>p:not(.eyebrow) {
+    font-size: 14px;
+  }
+  .hero-availability,
+  .about-stats>div>span,
+  .project-info p,
+  .journey-meta,
+  .contact-availability,
+  .contact-links {
+    font-size: 10px;
+  }
+  .journey-company small,
+  .journey-toggle,
+  .education-copy>p,
+  .contact-email {
+    font-size: 11px;
+  }
+  .tags>span,
+  .skill-card .tags>span {
+    font-size: 9px;
+  }
+}
