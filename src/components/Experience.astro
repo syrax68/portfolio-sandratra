@@ -19,7 +19,7 @@ const highlights = [
             <span class="project-sculpture" aria-hidden="true">{project.sign}</span>
             <span class="project-art-bottom">{project.company}<span class="project-open"><Icon name="diagonal" /></span></span>
           </a>
-          <div class="project-info"><div><h3>{project.company}</h3><p>{project.role}</p></div><span class="project-year">{project.period.split(' — ')[0]}</span></div>
+          <div class="project-info"><div><h3>{project.company}</h3><p>{project.role}</p></div><span class="project-year">{project.current ? project.period.split(' — ')[0] : project.period.replace(' — ', ' → ')}</span></div>
           <div class="tags">{project.stack.slice(0, 3).map(tech => <span>{tech}</span>)}</div>
         </article>
       ))}
@@ -28,7 +28,7 @@ const highlights = [
     <div class="journey-list">
       {experiences.slice(0, 3).map((exp, index) => (
         <details class="journey-item" id={`mission-${['sgel', 'dilypse', 'optedif'][index]}`}>
-          <summary><span class="journey-date">{exp.period}</span><span class="journey-company">{exp.company}<small>{exp.role}</small></span><span class="journey-status"><span class="status-dot"></span> En cours</span><span class="detail-plus" aria-hidden="true">+</span></summary>
+          <summary><span class="journey-date">{exp.period}</span><span class="journey-company">{exp.company}<small>{exp.role}</small></span><span class="journey-status">{exp.current && <span class="status-dot"></span>}{exp.current ? 'En cours' : 'Expédition terminée'}</span><span class="detail-plus" aria-hidden="true">+</span></summary>
           <div class="journey-content"><p>{exp.description}</p><div class="journey-meta"><span>{exp.location}</span>{exp.website && <a href={exp.website} target="_blank" rel="noopener noreferrer">Visiter le site <Icon name="diagonal" /></a>}</div><div class="tags">{exp.stack.map(tech => <span>{tech}</span>)}</div></div>
         </details>
       ))}
