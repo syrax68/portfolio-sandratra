@@ -805,8 +805,8 @@ h2 em {
   box-shadow: 1px 3px 3px #0007;
 }
 .wanted-title {
-  font: 700 55px/.95 var(--serif);
-  letter-spacing: 6px;
+  font: 700 48px/1 var(--serif);
+  letter-spacing: 4px;
   margin-top: 3px;
 }
 .wanted-subtitle {
@@ -881,13 +881,23 @@ h2 em {
   text-align: center;
   transform: rotate(12deg);
   color: #bda46e;
-  font: 7px/1.8 var(--mono);
-  letter-spacing: 1.7px;
+  font: 7px/1.3 var(--mono);
+  gap: 5px;
+  letter-spacing: 1.2px;
   background: #0f1d18e0;
 }
 .portrait-stamp strong {
   font-size: 12px;
   letter-spacing: 2px;
+}
+@media (max-width: 360px) {
+  .wanted-poster .portrait-stamp {
+    right: 0;
+  }
+  .wanted-poster .wanted-title {
+    font-size: 38px;
+    letter-spacing: 4px;
+  }
 }
 .portrait-note {
   color: #a79874;
@@ -977,9 +987,13 @@ h2 em {
 .project-art-top {
   display: flex;
   justify-content: space-between;
+  gap: 12px;
   font: 6px var(--mono);
   letter-spacing: 1.2px;
   opacity: .65;
+}
+.project-art-top>span:last-child {
+  white-space: nowrap;
 }
 .project-art-title {
   font: 500 29px/1.05 var(--serif);
@@ -1194,6 +1208,9 @@ h2 em {
 .skill-card {
   padding: 33px 28px;
   min-width: 0;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 5;
 }
 .skill-card+.skill-card {
   border-left: 1px solid var(--line);
@@ -1232,6 +1249,8 @@ h2 em {
   min-height: 65px;
 }
 .skill-card .tags {
+  align-content: start;
+  align-items: start;
   gap: 8px;
 }
 .skill-card .tags>span {
@@ -1791,7 +1810,7 @@ h2 em {
     padding: 16px;
   }
   .wanted-title {
-    font-size: 47px;
+    font-size: 42px;
   }
   .portrait-photo {
     height: 185px;
@@ -1870,8 +1889,13 @@ h2 em {
   .sgel .project-sculpture {
     font-size: 135px;
   }
+  .project-info {
+    flex-direction: column;
+    gap: 6px;
+  }
   .project-year {
-    display: none;
+    display: block;
+    margin-top: 0;
   }
   .project-info h3 {
     font-size: 14px;
@@ -2088,9 +2112,9 @@ h2 em {
     font-size: 15px;
   }
   .ribbon-ai {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 18px 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 24px;
   }
   .companion-icon {
     width: 18px;
@@ -2569,5 +2593,26 @@ body {
   .tags>span,
   .skill-card .tags>span {
     font-size: 9px;
+  }
+}
+
+/* Keep the same reading order when cards stack on small screens. */
+@media (max-width: 640px) {
+  .skill-card {
+    display: block;
+    grid-row: auto;
+  }
+  .project-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 16px;
+  }
+  .brand small {
+    letter-spacing: 1.1px;
+    white-space: nowrap;
+  }
+  .portrait-stamp {
+    font-size: 7px;
   }
 }
